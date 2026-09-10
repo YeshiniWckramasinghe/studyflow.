@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, Link } from 'react-router-dom'
 import Sidebar from './components/Sidebar.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import Tasks from './pages/Tasks.jsx'
@@ -28,10 +28,10 @@ export default function App() {
             <path d="M4 6.5h16M4 12h16M4 17.5h16" strokeLinecap="round" />
           </svg>
         </button>
-        <div className="flex items-center gap-2">
+               <Link to="/" className="flex items-center gap-2">
           <span className="flex h-7 w-7 items-center justify-center rounded-md bg-amber-500 font-display text-[15px] font-semibold text-moss-900">S</span>
           <span className="font-display text-[16px] font-medium">StudyFlow</span>
-        </div>
+        </Link>
         <div className="w-7" />
       </div>
 
