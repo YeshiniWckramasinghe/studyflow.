@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Sidebar from './components/Sidebar.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import Tasks from './pages/Tasks.jsx'
@@ -52,10 +52,11 @@ export default function App() {
           ) : loading ? (
             <LoadingState />
           ) : (
-            <Routes>
+                        <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/tasks" element={<Tasks />} />
               <Route path="/subjects" element={<Subjects />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           )}
         </div>
