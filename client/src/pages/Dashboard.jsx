@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useData } from '../context/DataContext.jsx'
 import { colorFor } from '../utils/colors.js'
 import { daysUntil } from '../utils/dateHelpers.js'
@@ -58,6 +59,26 @@ export default function Dashboard() {
           {greeting}. Here's where things stand.
         </h1>
       </div>
+
+
+      {subjects.length === 0 && (
+        <div className="rounded-lg border border-dashed border-amber-300 bg-amber-50 px-5 py-4 dark:border-amber-700/50 dark:bg-amber-900/10">
+          <p className="font-display text-[15px] font-medium text-ink-light dark:text-ink-dark">
+            Add your first subject to get started
+          </p>
+          <p className="mt-1 text-[13px] text-ink-light/60 dark:text-ink-dark/60">
+            Subjects group your assignments — physics, history, whatever's on your timetable.
+          </p>
+          <Link
+            to="/subjects"
+            className="mt-3 inline-block rounded-md bg-moss-500 px-3.5 py-2 text-[13px] font-medium text-white hover:bg-moss-600"
+          >
+            Go to Subjects
+          </Link>
+        </div>
+      )}
+
+      
 
       {/* Stat cards */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
