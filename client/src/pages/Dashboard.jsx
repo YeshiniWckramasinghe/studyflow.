@@ -126,10 +126,18 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Upcoming deadlines */}
+            {/* Upcoming deadlines */}
       <div>
         <div className="mb-3 flex items-center justify-between">
           <h2 className="font-display text-[17px] font-medium text-ink-light dark:text-ink-dark">Upcoming deadlines</h2>
+          {tasks.length > 0 && (
+            <Link
+              to="/tasks"
+              className="text-[13px] font-medium text-moss-600 hover:underline dark:text-moss-300"
+            >
+              View all
+            </Link>
+          )}
         </div>
         {upcoming.length === 0 ? (
           <EmptyState
