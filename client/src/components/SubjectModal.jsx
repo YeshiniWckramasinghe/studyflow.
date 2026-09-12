@@ -10,7 +10,7 @@ const labelCls = 'mb-1.5 block text-[12.5px] font-medium text-ink-light/70 dark:
 const COLOR_KEYS = Object.keys(COLOR_MAP)
 
 export default function SubjectModal({ subject, onClose }) {
-  const { addSubject, updateSubject } = useData()
+    const { subjects, addSubject, updateSubject } = useData()
   const isEdit = Boolean(subject)
   const [form, setForm] = useState(
     () => subject || { name: '', instructor: '', color: 'moss' },
@@ -24,6 +24,13 @@ export default function SubjectModal({ subject, onClose }) {
     e.preventDefault()
     if (!form.name.trim()) {
       setError('Give the subject a name.')
+      return
+    }
+        const isDuplicate = subjects.some(
+      (s) => s.name.trim().toLowerCase() === form.name.trim().toLowerCase() && s.id !== subject?.id,
+    )
+    if (isDuplicate) {
+      setError('You already have a subject with this name.')
       return
     }
     setError('')
