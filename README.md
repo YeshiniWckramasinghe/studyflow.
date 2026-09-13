@@ -1,5 +1,11 @@
 # StudyFlow — Student Study Planner
 
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-4-000000?logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)
+
 A full-stack app for managing subjects, assignments, deadlines, and study progress.
 
 - **Frontend**: React 18 + Vite + React Router + Tailwind CSS + Recharts
@@ -12,6 +18,12 @@ studyflow/
   client/    React frontend (Vite)
   server/    Express API + MongoDB models
 ```
+
+## Screenshots
+
+| Dashboard | Assignments | Subjects |
+|---|---|---|
+| ![Dashboard](docs/screenshots/dashboard.png) | ![Assignments](docs/screenshots/assignments.png) | ![Subjects](docs/screenshots/subjects.png) |
 
 ## 1. Prerequisites
 
